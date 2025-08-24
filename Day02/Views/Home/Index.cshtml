@@ -3,6 +3,13 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <input type="text" id="nameInput" />
+    <button onclick="goToWelcome()">Click me</button>
 </div>
+
+<script>
+    function goToWelcome() {
+        var name = document.getElementById("nameInput").value;
+        window.location.href = "/Welcome/" + name;
+    }
+</script>

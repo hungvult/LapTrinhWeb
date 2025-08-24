@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Welcome";
+}
+
+<h1>Welcome, @ViewData["name"]!</h1>
+<button onclick="goToGoodbye()">Click me</button>
+
+<script>
+    function goToGoodbye() {
+        window.location.href = "/Goodbye/" + @ViewData["name"];
+    }
+</script>
