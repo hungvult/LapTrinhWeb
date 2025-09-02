@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <input type="text" id="nameInput" />
+    <button onclick="goToWelcome()">Click me</button>
+</div>
+
+<script>
+    function goToWelcome() {
+        var name = document.getElementById("nameInput").value;
+        window.location.href = "/Welcome/" + name;
+    }
+</script>
