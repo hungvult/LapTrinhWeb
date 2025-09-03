@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Product>
+
+<div class="d-flex justify-content-between col-12">
+	@{
+		foreach(var product in Model)
+		{
+			<div class="card col-3">
+				<img class="card-img" src=@product.ImageSrc />
+				<p class="card-footer text-center">@product.Name</p>
+			</div>
+
+		}
+	}
+</div>
