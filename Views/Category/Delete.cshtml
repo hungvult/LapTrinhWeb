@@ -1,0 +1,19 @@
+@model LapTrinhWeb.Models.Category
+@{
+    ViewData["Title"] = "Xóa danh mục";
+}
+<div class="container mt-4">
+    <h2>Xóa danh mục</h2>
+    <h4>Bạn có chắc chắn muốn xóa danh mục này?</h4>
+    <dl class="row">
+        <dt class="col-sm-3">Id</dt>
+        <dd class="col-sm-9">@Model.Id</dd>
+        <dt class="col-sm-3">Tên</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+    </dl>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Xóa</button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>
+    </form>
+</div>

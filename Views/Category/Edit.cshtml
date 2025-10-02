@@ -1,0 +1,20 @@
+@model LapTrinhWeb.Models.Category
+@{
+    ViewData["Title"] = "Sửa danh mục";
+}
+<div class="container mt-4">
+    <h2>Sửa danh mục</h2>
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a asp-action="Index" class="btn btn-secondary ms-2">Quay lại</a>
+    </form>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
