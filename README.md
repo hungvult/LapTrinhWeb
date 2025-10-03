@@ -1,4 +1,4 @@
-| Nhánh | Link |
+| Nhánh | Link | Nội dung |
 | :-: | :-: | :-: |
 | Homework/Day02 | [Homework/Day02](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day02) | Data Annotation and Validation |
 | Homework/Day03 | [Homework/Day03](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day03) | Model |
