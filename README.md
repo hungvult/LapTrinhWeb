@@ -5,3 +5,4 @@
 | Homework/Day04 | [Homework/Day04](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day04) | Layout |
 | Homework/Day05 | [Homework/Day05](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day05) | View |
 | Homework/Day06 | [Homework/Day06](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day06) | Data Annotation and Validation |
+| Homework/Day07 | [Homework/Day07](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day07) | Database Access - Code First |
