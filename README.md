@@ -7,3 +7,4 @@
 | Homework/Day06 | [Homework/Day06](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day06) | Data Annotation and Validation |
 | Homework/Day07 | [Homework/Day07](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day07) | Database Access - Database First (Pending) |
 | Homework/Day08 | [Homework/Day08](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day08) | Database Access - Code First (Pending) |
+| Homework/Day09 | [Homework/Day08](https://github.com/hungtvlt/LapTrinhWeb/tree/Homework/Day09) | Database Access - Code First + Database First (Part 2) (Pending) |
