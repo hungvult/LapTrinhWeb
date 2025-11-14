@@ -52,11 +52,47 @@ namespace LapTrinhWeb.Controllers
 
         // POST: Student/Create
         [HttpPost]
-        public IActionResult Create(Student s)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Student student, IFormFile ImageFile)
         {
-            s.Id = listStudents.Last<Student>().Id + 1;
-            listStudents.Add(s);
-            return View("Index", listStudents);
+            if (ModelState.IsValid)
+            {
+                student.Id = listStudents.Any() ? listStudents.Last().Id + 1 : 1;
+                if (ImageFile != null && ImageFile.Length > 0)
+                {
+                    var uploads = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images");
+                    if (!Directory.Exists(uploads))
+                        Directory.CreateDirectory(uploads);
+                    var extension = Path.GetExtension(ImageFile.FileName);
+                    var fileName = $"{student.Id}_{Guid.NewGuid().ToString().Substring(0, 8)}{extension}";
+                    var filePath = Path.Combine(uploads, fileName);
+                    try
+                    {
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            ImageFile.CopyTo(stream);
+                        }
+                        student.ImageFileName = fileName;
+                    }
+                    catch (Exception ex)
+                    {
+                        ModelState.AddModelError("", $"Lỗi khi lưu file: {ex.Message}");
+                        ViewBag.AllGenders = Enum.GetValues(typeof(Gender)).Cast<Gender>().ToList();
+                        ViewBag.AllBranches = new List<SelectListItem>()
+                    {
+                        new SelectListItem(){ Text="Information Technology", Value=Branch.IT.ToString() },
+                        new SelectListItem(){ Text="Bio Engineering", Value=Branch.BE.ToString() },
+                        new SelectListItem(){ Text="Civil Engineering", Value=Branch.CE.ToString() },
+                        new SelectListItem(){ Text="Electrical Engineering", Value=Branch.EE.ToString() }
+                    };
+                        return View(student);
+                    }
+                }
+
+                listStudents.Add(student);
+                return Redirect("/Admin/Student/List");
+            }
+            return View(student);
         }
     }
 }

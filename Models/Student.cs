@@ -13,4 +13,5 @@ public class Student
     public bool IsRegular { get; set; }//Hệ: true-chính qui, false-phi cq
     public string? Address { get; set; }//Địa chỉ
     public DateTime DateOfBirth { get; set; }//Ngày sinh
+    public string? ImageFileName { get; set; }
 }

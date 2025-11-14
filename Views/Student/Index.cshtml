@@ -21,6 +21,7 @@
         <th>Hệ ĐT</th>
         <th>Địa chỉ</th>
         <th>Email</th>
+        <th>Hình ảnh</th>
     </thead>
     <tbody>
         @foreach (Student s in Model)
@@ -51,6 +52,17 @@
                 <td>@(s.Gender == Gender.Male ? "Nam" : "Nữ")</td>
                 <td>@(s.IsRegular ? "Chính quy" : "Phi chính quy")</td>
                 <td>@s.Address</td>
+                <td>@s.Email</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(s.ImageFileName))
+                    {
+                        <img src="~/images/@s.ImageFileName" width="80" alt="Ảnh sinh viên" />
+                    }
+                    else
+                    {
+                        <span>Không có ảnh</span>
+                    }
+                </td>
             </tr>
         }
     </tbody>

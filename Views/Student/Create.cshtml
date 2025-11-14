@@ -9,6 +9,7 @@
 
     <!-- Active: use named route 'student_add_route' so posting goes to /Admin/Student/Add which maps to Student.Create -->
     <form asp-route="student_add_route" method="post" class="mt-3">
+        @Html.AntiForgeryToken()
         <div style="margin-top:7px" class="form-group row">
             <label asp-for="Name" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
@@ -50,10 +51,11 @@
         <div style="margin-top:7px" class="form-group row">
             <label asp-for="Gender" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
-                @foreach (var gender in ViewBag.AllGenders)
+                @foreach (var gender in Enum.GetValues(typeof(Gender)))
                 {
                     <label class="radio-inline">
-                        <input type="radio" asp-for="Gender" value="@gender" id="Gender@(gender)" />@gender<br />
+                        <input type="radio" asp-for="Gender" value="@gender" />
+                        @gender
                     </label>
                 }
             </div>
@@ -62,6 +64,12 @@
             <label asp-for="Address" class="col-sm-2 col-form-label"></label>
             <div class="col-sm-10">
                 <textarea asp-for="Address" class="form-control" placeholder="Địa chỉ"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Ảnh đại diện</label>
+            <div class="col-sm-10">
+                <input type="file" name="ImageFile" class="form-control" />
             </div>
         </div>
         <div style="margin-top:10px" class="form-group row">
