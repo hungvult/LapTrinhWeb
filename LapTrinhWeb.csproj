@@ -4,6 +4,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Disable SDK auto-generation of assembly attributes to avoid duplicates
+         (TargetFrameworkAttribute, AssemblyInfo, RazorAssemblyInfo, etc.) -->
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateRazorAssemblyInfo>false</GenerateRazorAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
   </PropertyGroup>
 
 </Project>
