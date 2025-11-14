@@ -26,13 +26,13 @@ namespace LapTrinhWeb.Controllers
                     Address = "A1-2021", Email = "mai@g.com" }
             };
         }
-        // GET: StudentController
+        // GET: Student
         public ActionResult Index()
         {
             return View(listStudents);
         }
 
-        // GET: ...
+        // GET: Student/Create
         [HttpGet]
         public IActionResult Create()
         {
@@ -50,7 +50,7 @@ namespace LapTrinhWeb.Controllers
             return View();
         }
 
-        // POST: ...
+        // POST: Student/Create
         [HttpPost]
         public IActionResult Create(Student s)
         {
