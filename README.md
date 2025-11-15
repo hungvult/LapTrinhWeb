@@ -12,3 +12,4 @@
 | Lab02 | [Lab02](https://github.com/hungvult/LapTrinhWeb/tree/Lab02) | IDK (Pending) |
 | Lab03 | [Lab03](https://github.com/hungvult/LapTrinhWeb/tree/Lab03) | IDK (Pending) |
 | Lab04 | [Lab04](https://github.com/hungvult/LapTrinhWeb/tree/Lab04) | IDK (Pending) |
+| Lab05 | [Lab05](https://github.com/hungvult/LapTrinhWeb/tree/Lab05) | IDK (Pending) |
