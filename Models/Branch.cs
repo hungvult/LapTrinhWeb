@@ -1,6 +1,10 @@
-namespace LapTrinhWeb.Models;
-
-public enum Branch
+﻿namespace LapTrinhWeb.Models
 {
-    IT, BE, CE, EE
+    public enum Branch
+    {
+        IT,
+        BE,
+        CE,
+        EE
+    }
 }
