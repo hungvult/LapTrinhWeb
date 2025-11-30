@@ -84,6 +84,18 @@ namespace LapTrinhWeb.Controllers
                 }
                 s.ProfileImagePath = "/images/students/" + uniqueFileName;
             }
+            if (!ModelState.IsValid)
+            {
+                ViewBag.AllGenders = Enum.GetValues(typeof(Gender)).Cast<Gender>().ToList();
+                ViewBag.AllBranch = new List<SelectListItem>()
+                {
+                    new SelectListItem { Text = "IT", Value = "1" },
+                    new SelectListItem { Text = "BE", Value = "2" },
+                    new SelectListItem { Text = "CE", Value = "3" },
+                    new SelectListItem { Text = "EE", Value = "4" }
+                };
+                return View(s);
+            }
             s.Id = students.Last<Student>().Id + 1;
             students.Add(s);
             Console.WriteLine(">>> [POST] Đã thêm. Tổng số SV: " + students.Count);
