@@ -5,7 +5,6 @@ using LapTrinhWeb.Models;
 
 namespace LapTrinhWeb.Controllers
 {
-    [Route("Admin/Student")]
     public class StudentController : Controller
     {
         private static List<Student> students;
