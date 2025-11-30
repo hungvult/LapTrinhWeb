@@ -6,9 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <!-- Disable SDK auto-generation of assembly attributes to avoid duplicates
          (TargetFrameworkAttribute, AssemblyInfo, RazorAssemblyInfo, etc.) -->
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <!--<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GenerateRazorAssemblyInfo>false</GenerateRazorAssemblyInfo>
-    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>-->
   </PropertyGroup>
 
 </Project>

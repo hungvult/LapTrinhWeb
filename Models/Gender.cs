@@ -1,9 +1,8 @@
-using System;
-
-namespace LapTrinhWeb.Models;
-
-public enum Gender
+﻿namespace LapTrinhWeb.Models
 {
-    Male,
-    Female,
+    public enum Gender
+    {
+        Male,
+        Female,
+    }
 }

@@ -1,69 +1,105 @@
-﻿@model IEnumerable<Student>
+﻿@model IEnumerable<LapTrinhWeb.Models.Student>
 
-<!-- Three different ways to link to the Create (Add) page -->
-<div class="mb-3">
-    <!-- 1) Plain HTML: direct href to the mapped URL (/Admin/Student/Add) -->
-    <a href="/Admin/Student/Add" class="btn btn-outline-primary">Create Student (plain href)</a>
+@{
+    ViewData["Title"] = "Index";
+}
 
-    <!-- 2) Tag Helper: link by action name (generates /Student/Create) -->
-    <a asp-action="Create" class="btn btn-primary">Create Student (asp-action)</a>
+<h1>Index</h1>
 
-    <!-- 3) Tag Helper: link by route name (uses the named route 'student_add_route') -->
-    <a asp-route="student_add_route" class="btn btn-success">Create Student (asp-route)</a>
-</div>
-<table class="table table-striped">
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
     <thead>
-        <th>Mã</th>
-        <th>Họ tên</th>
-        <th>Ngày sinh</th>
-        <th>Ngành</th>
-        <th>Giới tính</th>
-        <th>Hệ ĐT</th>
-        <th>Địa chỉ</th>
-        <th>Email</th>
-        <th>Hình ảnh</th>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Branch)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsRegular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBorth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfileImagePath)
+            </th>
+            <th></th>
+        </tr>
     </thead>
     <tbody>
-        @foreach (Student s in Model)
-        {
-            <tr>
-                <td>@s.Id</td>
-                <td>@s.Name</td>
-                <td>@s.DateOfBirth</td>
-                @{
-                    string str = "";
-                    switch (s.Branch)
-                    {
-                        case Branch.IT:
-                            str = "CNTT";
-                            break;
-                        case Branch.BE:
-                            str = "Kinh tế";
-                            break;
-                        case Branch.CE:
-                            str = "Công trình";
-                            break;
-                        case Branch.EE:
-                            str = "Điện - Điện tử";
-                            break;
-                    }
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Branch)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsRegular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBorth)
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(item.ProfileImagePath))
+                {
+                    <img src="@item.ProfileImagePath" alt="Ảnh đại diện" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;" />
                 }
-                <td>@str</td>
-                <td>@(s.Gender == Gender.Male ? "Nam" : "Nữ")</td>
-                <td>@(s.IsRegular ? "Chính quy" : "Phi chính quy")</td>
-                <td>@s.Address</td>
-                <td>@s.Email</td>
-                <td>
-                    @if (!string.IsNullOrEmpty(s.ImageFileName))
-                    {
-                        <img src="~/images/@s.ImageFileName" width="80" alt="Ảnh sinh viên" />
-                    }
-                    else
-                    {
-                        <span>Không có ảnh</span>
-                    }
-                </td>
-            </tr>
-        }
+                else
+                {
+                    <span>Không có ảnh</span>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
     </tbody>
 </table>
+@* 
+@section Srcips{
+    <script>
+        var table = document.querySelector("table");
+        table.onclick = () => {
+            table.style = "background-color: yellow;"
+        }
+    </script>
+} *@

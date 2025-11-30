@@ -1,17 +1,22 @@
-using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace LapTrinhWeb.Models;
-
-public class Student
+namespace LapTrinhWeb.Models
 {
-    public int Id { get; set; }//Mã sinh viên
-    public string? Name { get; set; } //Họ tên
-    public string? Email { get; set; } //Email
-    public string? Password { get; set; }//Mật khẩu
-    public Branch? Branch { get; set; }//Ngành học
-    public Gender? Gender { get; set; }//Giới tính
-    public bool IsRegular { get; set; }//Hệ: true-chính qui, false-phi cq
-    public string? Address { get; set; }//Địa chỉ
-    public DateTime DateOfBirth { get; set; }//Ngày sinh
-    public string? ImageFileName { get; set; }
+    public class Student
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public Branch? Branch { get; set; }
+        public Gender? Gender { get; set; }
+        public bool IsRegular { get; set; }
+        public string? Address { get; set; }
+        public DateTime DateOfBorth { get; set; }
+
+        public string? ProfileImagePath { get; set; }
+
+        [NotMapped]
+        public IFormFile? ProfileImage { get; set; }
+    }
 }
