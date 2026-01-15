@@ -1,3 +1,5 @@
+Deprecated
+
 | Nhánh | Link | Nội dung |
 | :-: | :-: | :-: |
 | Homework/Day02 | [Homework/Day02](https://github.com/hungvult/LapTrinhWeb/tree/Homework/Day02) | Controller |
